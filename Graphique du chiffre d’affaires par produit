@@ -1,0 +1,12 @@
+Graphique du chiffre d’affaires par produit
+# Calcul du chiffre d'affaires
+df['chiffre_affaires'] = df['quantité'] * df['prix_unitaire']
+
+# Graphique du chiffre d'affaires par produit
+plt.figure(figsize=(8,5))
+sns.barplot(data=df, x='produit', y='chiffre_affaires', palette='magma')
+plt.title("Chiffre d'affaires par produit")
+plt.xlabel("Produit")
+plt.ylabel("Chiffre d'affaires")
+plt.xticks(rotation=45)
+plt.show()
